@@ -18,12 +18,12 @@ const AuthedRoutes = ({ user, isAdmin }) => (
       <Route
         exact
         path="/libraries"
-        component={() => <ListLibraries user={user} isAdmin={isAdmin} />}
+        component={() => <ListLibraries isAdmin={isAdmin} />}
       />
       <Route
         exact
         path="/libraries/:libraryId"
-        component={() => <DetailsLibraries user={user} isAdmin={isAdmin} />}
+        component={() => <DetailsLibraries />}
       />
       <Route
         exact
@@ -33,18 +33,14 @@ const AuthedRoutes = ({ user, isAdmin }) => (
       <Route
         exact
         path="/books/create"
-        component={() => <BookForm user={user} isAdmin={isAdmin} />}
+        component={() => <BookForm user={user} />}
       />
       <Route
         exact
         path="/books/:bookId/edit"
-        component={() => <BookForm user={user} isAdmin={isAdmin} />}
+        component={() => <BookForm user={user} />}
       />
-      <Route
-        exact
-        path="/books/:bookId"
-        component={() => <DetailsBooks user={user} isAdmin={isAdmin} />}
-      />
+      <Route exact path="/books/:bookId" component={() => <DetailsBooks />} />
       <Redirect to="/" />
     </Switch>
   </>

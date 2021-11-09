@@ -12,23 +12,19 @@ const UnAuthedRoutes = ({ user, isAdmin }) => (
       <Route
         exact
         path="/libraries"
-        component={() => <ListLibraries user={user} isAdmin={isAdmin} />}
+        component={() => <ListLibraries isAdmin={isAdmin} />}
       />
       <Route
         exact
         path="/libraries/:libraryId"
-        component={() => <DetailsLibraries user={user} isAdmin={isAdmin} />}
+        component={() => <DetailsLibraries />}
       />
       <Route
         exact
         path="/books"
         component={() => <ListBooks user={user} isAdmin={isAdmin} />}
       />
-      <Route
-        exact
-        path="/books/:bookId"
-        component={() => <DetailsBooks user={user} isAdmin={isAdmin} />}
-      />
+      <Route exact path="/books/:bookId" component={() => <DetailsBooks />} />
       <Redirect to="/" />
     </Switch>
   </>

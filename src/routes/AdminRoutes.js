@@ -14,27 +14,23 @@ const AdminRoutes = ({ user, isAdmin }) => (
       <Route
         exact
         path="/"
-        component={() => `Welcome Home, ${user.fullName}!`}
+        component={() => `Welcome Home Admin, ${user.fullName}!`}
       />
-      <Route
-        exact
-        path="/libraries/create"
-        component={() => <LibraryForm user={user} isAdmin={isAdmin} />}
-      />
+      <Route exact path="/libraries/create" component={() => <LibraryForm />} />
       <Route
         exact
         path="/libraries/:libraryId/edit"
-        component={() => <LibraryForm user={user} isAdmin={isAdmin} />}
+        component={() => <LibraryForm />}
       />
       <Route
         exact
         path="/libraries"
-        component={() => <ListLibraries user={user} isAdmin={isAdmin} />}
+        component={() => <ListLibraries isAdmin={isAdmin} />}
       />
       <Route
         exact
         path="/libraries/:libraryId"
-        component={() => <DetailsLibraries user={user} isAdmin={isAdmin} />}
+        component={() => <DetailsLibraries />}
       />
       <Route
         exact
@@ -44,18 +40,14 @@ const AdminRoutes = ({ user, isAdmin }) => (
       <Route
         exact
         path="/books/create"
-        component={() => <BookForm user={user} isAdmin={isAdmin} />}
+        component={() => <BookForm user={user} />}
       />
       <Route
         exact
         path="/books/:bookId/edit"
-        component={() => <BookForm user={user} isAdmin={isAdmin} />}
+        component={() => <BookForm user={user} />}
       />
-      <Route
-        exact
-        path="/books/:bookId"
-        component={() => <DetailsBooks user={user} isAdmin={isAdmin} />}
-      />
+      <Route exact path="/books/:bookId" component={() => <DetailsBooks />} />
       <Redirect to="/" />
     </Switch>
   </>

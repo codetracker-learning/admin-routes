@@ -68,7 +68,6 @@ const ListLibraries = ({ isAdmin }) => {
 };
 
 ListLibraries.propTypes = {
-  // user: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]).isRequired,
   isAdmin: PropTypes.bool.isRequired,
 };
 

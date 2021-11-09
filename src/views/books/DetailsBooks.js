@@ -1,10 +1,8 @@
-import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Button } from 'reactstrap';
 import { getSingleBook } from '../../api/data/booksData';
 
-const DetailsBooks = ({ isAdmin }) => {
+const DetailsBooks = () => {
   const { bookId } = useParams();
   const [book, setBook] = useState(null);
 
@@ -18,21 +16,7 @@ const DetailsBooks = ({ isAdmin }) => {
   if (!book.firebaseKey) {
     return 'This book does not exist!';
   }
-  return (
-    <>
-      {book.name}
-      {isAdmin && (
-        <>
-          <Button color="success">Edit</Button>
-          <Button color="danger">Delete</Button>
-        </>
-      )}
-    </>
-  );
-};
-
-DetailsBooks.propTypes = {
-  isAdmin: PropTypes.bool.isRequired,
+  return <>{book.name}</>;
 };
 
 export default DetailsBooks;

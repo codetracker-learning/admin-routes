@@ -1,4 +1,3 @@
-// import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { getAllAuthors } from '../../api/data/authorsData';
@@ -69,10 +68,5 @@ const LibraryForm = () => {
     </>
   );
 };
-
-// LibraryForm.propTypes = {
-//   // user: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]).isRequired,
-//   // isAdmin: PropTypes.bool.isRequired,
-// };
 
 export default LibraryForm;
